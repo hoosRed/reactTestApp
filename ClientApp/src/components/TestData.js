@@ -44,7 +44,7 @@ export class TestData extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
+      : TestData.renderForecastsTable(this.state.forecasts);
 
     return (
       <div>
