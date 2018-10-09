@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 
-export class FetchData extends Component {
-  displayName = FetchData.name
+export class TestData extends Component {
+  displayName = TestData.name
 
   constructor(props) {
     super(props);
