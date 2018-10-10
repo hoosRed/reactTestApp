@@ -11,7 +11,7 @@ namespace react_test_app.Controllers
     {
         private static string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Test", "Test", "Test", "Test", "Test", "Test", "Test", "Test", "test", "test"
         };
 
         [HttpGet("[action]")]
