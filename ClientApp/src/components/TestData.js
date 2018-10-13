@@ -9,7 +9,7 @@ export class TestData extends Component {
     super(props);
     this.state = { forecasts: [], loading: true };
    
-    fetch('api/FinancialData/WeatherForecasts')
+    fetch('api/FinancialData/StockDataPull')
       .then(response => response.json())
       .then(data => {
         this.setState({ forecasts: data, loading: false });

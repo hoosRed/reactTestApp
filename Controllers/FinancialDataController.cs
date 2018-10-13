@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace react_test_app.Controllers
-{
+{ 
     [Route("api/[controller]")]
     public class FinancialDataController : Controller
     {
@@ -15,30 +16,24 @@ namespace react_test_app.Controllers
         };
 
         [HttpGet("[action]")]
-        public IEnumerable<WeatherForecast> WeatherForecasts()
+        public string StockDataPull()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            using (var wb = new WebClient())
             {
-                DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            });
-        }
-
-        public class WeatherForecast
-        {
-            public string DateFormatted { get; set; }
-            public int TemperatureC { get; set; }
-            public string Summary { get; set; }
-
-            public int TemperatureF
-            {
-                get
-                {
-                    return 32 + (int)(TemperatureC / 0.5556);
-                }
+                string ticker = "MSFT";
+                string response = wb.DownloadString("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=A3XAZ1TLIGSK658B");
+                //Console.WriteLine(response);
+                Console.WriteLine(response);
+                return response;
             }
         }
     }
-}
+
+    public class StockData
+    {
+        public string Ticker { get; set; }
+        public string Open { get; set; }
+    }
+};
+    
+
