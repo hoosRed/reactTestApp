@@ -31,7 +31,6 @@ namespace react_test_app.Controllers
             public string DateFormatted { get; set; }
             public int TemperatureC { get; set; }
             public string Summary { get; set; }
-
             public int TemperatureF
             {
                 get

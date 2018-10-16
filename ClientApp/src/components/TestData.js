@@ -12,7 +12,7 @@ export class TestData extends Component {
     fetch('api/FinancialData/StockDataPull')
       .then(response => response.json())
       .then(data => {
-        this.setState({ forecasts: data, loading: false });
+        this.setState({ stocks: data, loading: false });
       });
   }
 
