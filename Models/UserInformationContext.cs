@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace react_test_app.Models
 {
-    public partial class userInformationContext : DbContext
+    public partial class UserInformationContext : DbContext
     {
-        public userInformationContext()
+        public UserInformationContext()
         {
         }
 
-        public userInformationContext(DbContextOptions<userInformationContext> options)
+        public UserInformationContext(DbContextOptions<UserInformationContext> options)
             : base(options)
         {
         }
