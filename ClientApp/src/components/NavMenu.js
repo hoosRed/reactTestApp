@@ -12,7 +12,7 @@ export class NavMenu extends Component {
       <Navbar inverse fixedTop fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={'/'}>react_test_app</Link>
+            <Link to={'/'}>Fantasy Maddness</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -36,7 +36,7 @@ export class NavMenu extends Component {
 
             <LinkContainer to={'/financialdata'}>
               <NavItem>
-                <Glyphicon glyph='th-list' /> Test data
+                <Glyphicon glyph='th-list' /> Fantasy Leaderboard
               </NavItem>
             </LinkContainer>
           </Nav>

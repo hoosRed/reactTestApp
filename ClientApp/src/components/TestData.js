@@ -7,33 +7,32 @@ export class TestData extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { forecasts: [], loading: true };
+    this.state = { users: [], loading: true };
    
     fetch('api/FinancialData/StockDataPull')
       .then(response => response.json())
       .then(data => {
-        this.setState({ stocks: data, loading: false });
+        this.setState({ users: data, loading: false });
       });
   }
 
-  static renderForecastsTable(forecasts) {
+  static renderUsersTable(users) {
     return (
       <table className='table'>
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+
           </tr>
         </thead>
         <tbody>
-          {forecasts.map(forecast =>
-            <tr key={forecast.dateFormatted}>
-              <td>{forecast.dateFormatted}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
+          {users.map(user =>
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
             </tr>
           )}
         </tbody>
@@ -44,12 +43,12 @@ export class TestData extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : TestData.renderForecastsTable(this.state.forecasts);
+      : TestData.renderUsersTable(this.state.users);
 
     return (
       <div>
-        <h1>Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
+        <h1>Fantasy Users Information</h1>
+        <p>Current Leaderboard</p>
         {contents}
       </div>
     );

@@ -12,29 +12,25 @@ namespace react_test_app.Controllers
     [Route("api/[controller]")]
     public class FinancialDataController : Controller
     {
-        private static string[] Summaries = new[]
-        {
-            "Test", "Test", "Test", "Test", "Test", "Test", "Test", "Test", "test", "test"
-        };
+        
 
         [HttpGet("[action]")]
-        public string StockDataPull()
+        public IEnumerable<Contact> StockDataPull()
         {
             SqlData myTestData = new SqlData();
             List<Contact> myList = myTestData.GetUsers();
-            string response = "";
-            foreach(Contact user in myList){
-                response += user.Name + "_" + user.Email+"_____";
-            }
-            return response;
+
+            // need 
+            return myList;
         }
     }
 
-    public class StockData
-    {
-        public string Ticker { get; set; }
-        public string Open { get; set; }
-    }
+    //public class Contact
+    //{
+    //    public string Name { get; set; }
+    //    public string Email { get; set; }
+    //    public string Id { get; set; }
+    //}
 };
     
 
