@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace react-test-app.Models
+namespace react_test_app.Models
 {
     public partial class userInformationContext : DbContext
     {
@@ -21,7 +21,7 @@ namespace react-test-app.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+
                 optionsBuilder.UseMySql("Server=127.0.0.1;Database=userInformation;UID=testUser;pwd=a12345;");
             }
         }

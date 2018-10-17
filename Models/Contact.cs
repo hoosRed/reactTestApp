@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace react-test-app.Models
+namespace react_test_app.Models
 {
     public partial class Contact
     {
