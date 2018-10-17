@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace react_test_app.Models
 {

@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using react_test_app.Models;
+//using Microsoft.EntityFrameworkCore;
+//using MySQL.Data.EntityFrameworkCore.Extensions;
 
 namespace react_test_app
 {
@@ -21,6 +26,9 @@ namespace react_test_app
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //services.Add(new ServiceDescriptor(typeof(UserInformationContext), new UserInformationContext(Configuration.GetConnectionString("DefaultConnection"))));  
+            services.Add(new ServiceDescriptor(typeof(UserInformationContext), new UserInformationContext()));  
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

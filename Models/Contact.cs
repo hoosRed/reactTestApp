@@ -9,4 +9,8 @@ namespace react_test_app.Models
         public string Email { get; set; }
         public int Id { get; set; }
     }
+    //public override string ToString(){
+    //    return this.Name + " " + this.Email + " " + this.Id;
+    //}
+
 }

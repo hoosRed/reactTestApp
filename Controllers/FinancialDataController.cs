@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using react_test_app.Models;
+using react_test_app.Services;
 
 namespace react_test_app.Controllers
 { 
@@ -18,14 +20,13 @@ namespace react_test_app.Controllers
         [HttpGet("[action]")]
         public string StockDataPull()
         {
-            using (var wb = new WebClient())
-            {
-                string ticker = "MSFT";
-                string response = wb.DownloadString("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=A3XAZ1TLIGSK658B");
-                //Console.WriteLine(response);
-                Console.WriteLine(response);
-                return response;
+            SqlData myTestData = new SqlData();
+            List<Contact> myList = myTestData.GetUsers();
+            string response = "";
+            foreach(Contact user in myList){
+                response += user.Name + "_" + user.Email+"_____";
             }
+            return response;
         }
     }
 
