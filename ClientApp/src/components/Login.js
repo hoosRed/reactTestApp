@@ -11,6 +11,7 @@ export class Login extends Component {
     super(props);
 
 
+
     this.state = {
       name: "",
       email: "",
@@ -31,9 +32,7 @@ export class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    /*const data = new FormData(event.target);*/
-    const data = this.state;
-
+    const data = new FormData(event.target);
     fetch('/api/FinancialData/AddUser', {
       method: 'POST',
       body: data,

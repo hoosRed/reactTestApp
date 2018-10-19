@@ -30,12 +30,6 @@ namespace react_test_app.Controllers
         }
     }
 
-    //public class Contact
-    //{
-    //    public string Name { get; set; }
-    //    public string Email { get; set; }
-    //    public string Id { get; set; }
-    //}
 };
     
 
