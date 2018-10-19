@@ -23,6 +23,11 @@ namespace react_test_app.Controllers
             // need 
             return myList;
         }
+        [HttpPost("[action]")]
+        public void AddUser(){
+            SqlData myTestData = new SqlData();
+
+        }
     }
 
     //public class Contact
