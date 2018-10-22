@@ -9,6 +9,7 @@ export class Login extends Component {
 
    constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
 
 
@@ -31,11 +32,18 @@ export class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.state.name);
+    // const data = new FormData(event.target);
+    const data = {
+    	Name: this.state.name,
+    	Email: this.state.email,
+    	Password: this.state.password
+    };
 
-    const data = new FormData(event.target);
+        
     fetch('/api/FinancialData/AddUser', {
       method: 'POST',
-      body: data,
+      body: JSON.stringify(data),
     });
   }
 
