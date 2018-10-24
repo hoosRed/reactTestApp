@@ -16,12 +16,12 @@ export class Login extends Component {
     this.state = {
       name: "",
       email: "",
-      password: ""
+      id: ""
     };
   }
   
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.email.length > 0 && this.state.id.length > 0;
   }
 
   handleChange = event => {
@@ -33,17 +33,18 @@ export class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state.name);
-    // const data = new FormData(event.target);
+    
     const data = {
-    	Name: this.state.name,
-    	Email: this.state.email,
-    	Password: this.state.password
+    	name: this.state.name,
+    	email: this.state.email,
+    	id: this.state.id
     };
 
         
-    fetch('/api/FinancialData/AddUser', {
+    fetch('/api/FinancialData/Signup', {
       method: 'POST',
       body: JSON.stringify(data),
+
     });
   }
 
@@ -63,18 +64,17 @@ export class Login extends Component {
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
-              autoFocus
               type="email"
               value={this.state.email}
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
+          <FormGroup controlId="id" bsSize="large">
+            <ControlLabel>Id</ControlLabel>
             <FormControl
-              value={this.state.password}
+              value={this.state.id}
               onChange={this.handleChange}
-              type="password"
+              type="number"
             />
           </FormGroup>
           <Button

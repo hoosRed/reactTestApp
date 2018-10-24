@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+
 using Microsoft.AspNetCore.Mvc;
 using react_test_app.Models;
 using react_test_app.Services;
+using System.IO;
 
 namespace react_test_app.Controllers
 { 
@@ -24,8 +27,19 @@ namespace react_test_app.Controllers
             return myList;
         }
         [HttpPost("[action]")]
-        public void AddUser(){
-            SqlData myTestData = new SqlData();
+        public void Signup()
+        {
+            string body = "";
+            using (var reader = new StreamReader(Request.Body))
+            {
+                body = reader.ReadToEnd();
+
+                // Do something
+            }
+            //string json = "{'name':'Julia','email':'tylerRedshaw@gmail.com','id':'9888'}";
+            string json = body;
+            SqlData dataService = new SqlData();
+            dataService.Signup(json);
 
         }
     }
