@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace react_test_app.Models
+namespace reactApp.Models
 {
     public partial class Contact
     {
@@ -9,8 +9,4 @@ namespace react_test_app.Models
         public string Email { get; set; }
         public int Id { get; set; }
     }
-    //public override string ToString(){
-    //    return this.Name + " " + this.Email + " " + this.Id;
-    //}
-
 }

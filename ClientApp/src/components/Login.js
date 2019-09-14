@@ -39,13 +39,15 @@ export class Login extends Component {
     	email: this.state.email,
     	id: this.state.id
     };
-
-        
+  
     fetch('/api/FinancialData/Signup', {
       method: 'POST',
       body: JSON.stringify(data),
 
     });
+  }
+  handleLogin = event =>{
+    fetch('/')
   }
 
   render() {
@@ -83,9 +85,15 @@ export class Login extends Component {
             disabled={!this.validateForm()}
             type="submit"
           >
-            Login
+            Signup
           </Button>
         </form>
+        <Button
+          
+          bsSize="large"
+          type="submit"
+          >Login</Button>
+
       </div>
     );
   }

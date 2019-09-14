@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace react_test_app
+namespace reactApp
 {
     public class Program
     {

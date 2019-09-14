@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "react-test-app", "react-test-app.csproj", "{F01B0D45-86DB-4F7A-AAB0-89D0F5CA42E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reactApp", "reactApp.csproj", "{F01B0D45-86DB-4F7A-AAB0-89D0F5CA42E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E76D21CC-31F9-4283-AA60-0F594FC497C3}"
 	ProjectSection(SolutionItems) = preProject

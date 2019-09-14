@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MySql.Data.MySqlClient;
-using react_test_app.Models;
+using reactApp.Models;
 using Newtonsoft.Json;
 
 using Newtonsoft.Json.Linq;
 
-namespace react_test_app.Services
+namespace reactApp.Services
 {
     public class SqlData
     {
@@ -22,15 +21,12 @@ namespace react_test_app.Services
             
         }
 
-        //public Contact Login(string email){
-        //    return users.Contact.Where(x => x.Email == email).First();
-        //}
+
         //updated ID to include password
         public void Signup(string body){
-            //var tempUser = JsonConvert.DeserializeObject(body);
+            
 
             var m = JsonConvert.DeserializeObject<Contact>(body);
-            //Contact user = JsonConvert.DeserializeObject<Contact>(body);
             Contact user = new Contact();
             user.Email = m.Email;
             user.Name = m.Name;

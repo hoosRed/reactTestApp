@@ -1,20 +1,26 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 
 using Microsoft.AspNetCore.Mvc;
-using react_test_app.Models;
-using react_test_app.Services;
+using reactApp.Models;
+using reactApp.Services;
 using System.IO;
+using Microsoft.AspNetCore.Authentication;
 
-namespace react_test_app.Controllers
-{ 
+namespace reactApp.Controllers
+{
     [Route("api/[controller]")]
     public class FinancialDataController : Controller
     {
+        //Login
+        [HttpGet("[action]")]
+        public async Task Login(string returnUrl = "/")
+        {
+            Console.WriteLine("Login with AuthO");
+            await HttpContext.ChallengeAsync("Auth0",
+            new AuthenticationProperties() { RedirectUri = returnUrl });
+        }
         
 
         [HttpGet("[action]")]
@@ -32,16 +38,17 @@ namespace react_test_app.Controllers
             string body = "";
             using (var reader = new StreamReader(Request.Body))
             {
+               
                 body = reader.ReadToEnd();
+                //reader.BsaseStream.Position = 0;
 
-                // Do something
             }
-            //string json = "{'name':'Julia','email':'tylerRedshaw@gmail.com','id':'9888'}";
             string json = body;
             SqlData dataService = new SqlData();
             dataService.Signup(json);
 
         }
+
     }
 
 };

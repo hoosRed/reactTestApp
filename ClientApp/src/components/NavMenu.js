@@ -28,20 +28,14 @@ export class NavMenu extends Component {
                 <Glyphicon glyph='user' /> Login
               </NavItem>
             </LinkContainer>
-            <LinkContainer to={'/counter'}>
+            <LinkContainer to={'/nflData'}>
               <NavItem>
-                <Glyphicon glyph='education' /> Counter
+                <Glyphicon glyph='education' /> NFL Projections
               </NavItem>
             </LinkContainer>
-            <LinkContainer to={'/fetchdata'}>
-              <NavItem>
-                <Glyphicon glyph='th-list' /> Fetch data
-              </NavItem>
-            </LinkContainer>
-
             <LinkContainer to={'/financialdata'}>
               <NavItem>
-                <Glyphicon glyph='th-list' /> Fantasy Leaderboard
+                <Glyphicon glyph='th-list' /> Users
               </NavItem>
             </LinkContainer>
           </Nav>
